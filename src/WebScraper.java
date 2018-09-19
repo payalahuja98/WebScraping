@@ -36,9 +36,12 @@ public class WebScraper {
     public static int findWordCount(String text, String toFind) {
         String[] textArray = text.split("\\s+");
 
+        toFind = toFind.toLowerCase();
+
         int wordCount = 0;
 
         for (int i = 0; i < textArray.length; i++) {
+            textArray[i] = textArray[i].toLowerCase();
             if (textArray[i].startsWith(toFind)){
                 wordCount++;
             }
